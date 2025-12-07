@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Oscilloscope</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- p5.js Core Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <!-- p5.js Sound Library (Needed for Microphone) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+    <main id="sketch-container"></main>
+
+    <!-- Instructions overlay -->
+    <div class="overlay">
+        <h1>Oscilloscope</h1>
+        <p>Click anywhere to start listening</p>
+    </div>
+
+    <!-- UI Controls -->
+    <div id="controls">
+        <button id="pause-btn">Pause</button>
+        <div class="slider-container">
+            <label for="sensitivity">Sensitivity</label>
+            <input type="range" id="sensitivity" min="1" max="10" value="5" step="0.1">
+        </div>
+        <div class="slider-container">
+            <label for="phase">Phase Shift</label>
+            <input type="range" id="phase" min="0" max="250" value="50" step="1">
+        </div>
+        <div class="slider-container">
+            <label for="viz-mode">Mode</label>
+            <select id="viz-mode"
+                style="background: rgba(0,0,0,0.5); color: #00ff88; border: 1px solid #00ff88; padding: 5px; border-radius: 4px;">
+                <option value="linear">Linear Wave</option>
+                <option value="radial">Circular Wave</option>
+                <option value="vector">Vector (XY)</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+
+</html>
